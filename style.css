@@ -1,0 +1,1036 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Nunito:wght@200;300;400;600;700&display=swap');
+
+/* VARIJABLE */
+:root {
+    --primary-color: #1e1c1c;
+    --secondary-color: rgba(255, 255, 255, 0.452);
+
+  }
+/* GLOBAL STYLES */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+
+}
+
+ul, li, a{
+    list-style-type: none;
+    text-decoration: none;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.footer{
+    margin-top: auto;
+}
+
+.footer p{
+    padding-bottom: 10px;
+
+}
+
+/* NAVIGATION */
+.navbarWrap{
+    width: 100vw;
+    background: var(--primary-color);
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    position: fixed;
+    z-index: 99;
+}
+
+.navbar{
+    background: var(--primary-color);
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+}
+
+.navLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    font-variant: all-small-caps;
+    letter-spacing: .5px;
+    font-size: 20px;
+}
+
+.navLinks li a{
+   color: white;
+}
+
+.logoWrap, .logoWrap a{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo{
+    font-family: 'Forum', cursive;
+    margin-right: 10px;
+    font-size: 35px;
+}
+
+.logoLine{
+    height: 40px;
+    width: 1px;
+    background-color: white;
+}
+
+.logoText{
+    font-family: 'Nunito', sans-serif;
+    text-transform: capitalize;
+    font-size: 12px;
+    width: 25px;
+    line-height: 13px;
+    margin-left: 10px;
+}
+
+.navLink{
+    position: relative;
+}
+
+.navLink::after{
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    transform: scale(0, 1);
+    transition: transform .4s ease;
+}
+
+.navLink:hover::after{
+    transform: scale(1, 1);
+}
+
+.contact{
+    color: white;
+    font-variant: all-small-caps;
+    letter-spacing: .5px;
+    font-size: 20px;
+    border: .5px solid white;
+    padding: 3px 10px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+
+.contact:hover{
+    background-color: white;
+    color: black;
+}
+
+.burger{
+    display: none;
+}
+
+/* HERO SECTION */
+
+.heroWrap{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    user-select: none;
+}
+
+.heroContent{ /* ovo je cijeli jedan novi div */
+    text-align: center;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(15%); /* ovo sam dodao jer mislim da nije bilo bas na nekoj sredini, sad mi je bolje */
+}
+
+.logoOverlap{
+    position: absolute;
+    z-index: 1;
+    height: 150px;
+    width: 300px;
+    background-color: var(--primary-color);
+    left: 29%;
+    top: 0%;
+    animation: overlapTop 1.8s ease-in;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.heroLogo{
+    font-family: 'Forum', cursive;
+    font-size: 150px;
+    text-transform: uppercase;
+    position: relative;
+
+    opacity: 0;
+    animation: heroLogo 1s ease-in;
+    animation-delay: .9s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.heroLine{
+    width: 100%;
+    height: 5px;
+    background-color: white;
+
+
+    animation: heroLine .8s ease-in;
+}
+
+.textOverlap{
+    position: absolute;
+    z-index: 1;
+    height: 50px;
+    width: 300px;
+    background-color: var(--primary-color);
+     top: 40%;
+    animation: overlapBottom 1.6s ease-in;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.heroText{
+    position: relative;
+    font-size: 50px;
+    font-weight: 200;
+    font-variant: all-small-caps;
+    letter-spacing: .5px;
+    margin-top: 30px;
+    text-transform: uppercase;
+
+
+    visibility: hidden;
+    animation: heroLogo 1s ease-in;
+    animation-delay: .9s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.heroDefinition{
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 150px;
+/*     margin-left: -650px;
+ */    
+/*     transform: translateX(-53%);
+ */    
+    width: 700px;
+    margin-left: 5%;
+    margin-right: 95%;
+    color: rgb(211, 208, 208); /* nije cisto bijela nego ova neka koja malo manje upada u oci */
+
+    visibility: hidden;
+    animation: definition 1s ease-in;
+    animation-delay: 1.8s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+
+/* ABOUT US */
+
+.aboutWrap{
+    height: 100vh;
+    width: 100vw;
+    background: var(--primary-color);
+    color: white;
+}
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    transform: translateY(15%);
+
+}
+
+.aboutLine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.line{
+    width: 1px;
+    height: 350px;
+    background-color: var(--secondary-color);
+}
+
+.aboutText{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    margin-top: 30px;
+    color: var(--secondary-color);
+    user-select: none;
+}
+
+.aboutContent{
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contentBold{
+    font-weight: 500;
+}
+
+.contentDefinition{
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+.contentDefinition p{
+    margin-left: 125px;
+    margin-top: 70px;
+}
+
+/* SERVICES */
+
+.servicesWrap{
+    height: 100vh;
+    background-color: var(--primary-color);
+    
+}
+
+.services{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    transform: translateY(15%);
+}
+
+.flipCardWrap{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-left: 160px;
+}
+
+.servicesLine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.servicesText{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    margin-top: 30px;
+    color: var(--secondary-color);
+    user-select: none;
+}
+
+.flipCard{
+    background-color: transparent;
+    color: white;
+    width: 233px;
+    height: 350px;
+    /*border: 1px solid white;
+    border-radius: 10px;*/
+    transform: translateX(-25%);
+}
+.flipCardInner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+    
+}
+.flipCard:hover .flipCardInner{
+    transform: rotateY(180deg);
+}
+.flipCardFront, .flipCardBack{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+   
+}
+.flipCardFront{
+    background-color: var(--primary-color);
+    opacity: 0.8;
+    color: white;
+    /*border-radius: 10px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    
+}
+.flipCardFront p{
+    position: absolute;
+    font-family:'Nunito', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 200;
+    opacity: 20;
+    z-index: 5;
+    text-shadow: 10px 10px 8px rgba(58, 55, 55, 0.822);
+    /*background-color: rgba(66, 66, 66, 0.288);*/
+    -webkit-backdrop-filter: blur(1.5px);
+    backdrop-filter: blur(1.5px);
+}
+.flipCardBack{
+    transform: rotateY(180deg);
+    background-color: var(--primary-color);
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imgback{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.flipCardBack p{
+    font-family:'Nunito', sans-serif;
+    align-self: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 30px;
+}
+
+
+/* CONTACT US */
+
+.contactUsWrap{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.contactUs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    transform: translateY(15%);
+    flex: 1;
+}
+
+.contactUsLine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+}
+
+.contactUsText{
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    margin-top: 30px;
+    color: var(--secondary-color);
+    user-select: none;
+}
+
+.companyInfo{
+    flex: 1;
+    margin-left: 195px;
+}
+.contactLogo{
+    margin-bottom: 25px;
+}
+.contactItems{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 220px;
+    line-height: 25px;
+    margin-bottom: 12px;
+}
+
+.selectable a{
+    user-select: text;
+    text-decoration: none;
+    color: white;
+}
+
+i{
+    color: white;
+    fill: white;
+    margin-right: 15px;
+}
+
+.contactForm{
+    flex:2;
+    width: 900px;
+}
+
+.inputField{
+    width: 300px;
+    line-height: 25px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    margin-bottom: 25px;
+    margin-right: 15px;
+    padding-left: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
+    
+}
+
+.textareaField{
+    width: 600px;
+    line-height: 25px;
+    font-size: 16px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    resize: none;
+    padding-left: 10px;
+}
+.bottomBreak{
+    margin-bottom: 20px;
+}
+
+.submitBtnWrap{
+    margin-top: 25px;
+}
+
+.submitBtn{
+    background-color: var(--primary-color);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    outline: none;
+    border: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.submitBtn:hover{
+    background-color: white;
+    color: black;
+}
+
+.formError{
+    font-variant: all-small-caps;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    display: none;
+    margin-top: 15px;
+}
+/* FOOTER */
+
+.footerWrap{
+    background-color: var(--primary-color);
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-variant: all-small-caps;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* 404 */
+
+.errorWrap{
+    background: var(--primary-color);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error h2{
+    font-size: 250px;
+    font-family: 'Forum', cursive;
+}
+
+.error p{
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-variant: all-small-caps;
+}
+
+.button{
+    margin-top: 25px;
+}
+
+.btn a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-variant: all-small-caps;
+    letter-spacing: .5px;
+    font-size: 20px;
+    border: .5px solid white;
+    padding: 5px 15px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+
+.btn a:hover{
+    color: black;
+    background: white;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1304px){
+    .heroDefinition{
+        margin-left: 130px;
+    }
+
+    .companyInfo{
+        margin-left: 105px;
+    }
+}
+
+@media only screen and (max-width: 1217px){
+    .heroDefinition{
+        margin-left: 230px;
+    }
+
+    .contactForm{
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 1193px){
+    .heroDefinition{
+        margin-left: 300px;
+    }
+
+    .companyInfo{
+        margin-left: 100px;
+    }
+
+    .contactForm{
+        width: 500px;
+    }
+
+    .inputField{
+        width: 250px;
+    }
+    .textareaField{
+        width: 500px;
+    }
+
+   .flipCardWrap{
+       margin-left: 100px;
+   }
+}
+
+@media only screen and (max-width: 1047px){
+    .heroDefinition{
+        margin-left: 400px;
+    }
+
+    .companyInfo{
+        margin-left: 70px;
+    }
+
+    .contactForm{
+        width: 500px;
+    }
+
+    .inputField{
+        width: 200px;
+    }
+    .textareaField{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1016px){
+    .navLinks{
+        width: 40%;
+    }
+    
+    .heroDefinition{
+        margin-left: 430px;
+    }
+
+    .flipCardInner{
+        height: 304px;
+        width: 200px;
+    }
+
+    .flipCardInner img{ 
+        height: 300px;
+    }
+  
+}
+
+@media only screen and (max-width: 905px){
+    .heroDefinition{
+        margin-left: 490px;
+    }
+
+    .companyInfo{
+        margin-left: 30px;
+        font-size: 14px;
+    }
+
+    .contactForm{
+        width: 400px;
+    }
+
+    .inputField{
+        width: 180px;
+    }
+    .textareaField{
+        width: 360px;
+    }
+
+    .flipCard{
+        display: inline-block;
+    }
+}
+
+
+@media only screen and (max-width: 848px){
+    .heroDefinition{
+        margin-left: 550px;
+    }
+
+    .flipCardInner{
+        height: 294px;
+        width: 190px;
+    }
+
+    .flipCardInner img{ 
+        height: 290px;
+    }
+}
+
+/* ovo je sad mobitel */
+@media only screen and (max-width: 768px){
+    .heroContent{
+        width: 500px;
+    }
+
+    .heroDefinition{
+        margin-left: 400px;
+    }
+
+    .navLinks, .contact{
+        display: none;
+    }
+
+    .burger{
+        display: flex;
+        flex-direction: column;
+    }
+    .burgerLine{
+        width: 30px;
+        height: 2px;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+    .aboutContent{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    
+    .footer p{
+        font-size: 13px;
+        padding-top: 20px;
+    }
+
+    .servicesWrap{
+        height: 1200px;
+    }
+
+    .servicesLine{
+        margin-top: -65px;
+    }
+
+    .servicesLine .line{
+        margin-top: 0;
+        height: 500px;
+    }
+
+    .flipCardWrap{
+        flex-direction: column;
+        height: 50%;
+    }
+
+    .flipCard{
+        margin-top: -40px;
+        margin-left: 4s0px;
+    }
+
+    .flipCardInner{
+        height: 284px;
+        width: 210px;
+    }
+
+    .flipCardInner img{ 
+        height: 280px;
+        width: 210px;
+    }
+
+    .contactUsWrap{
+        margin-top: 70px;
+    }
+}
+
+@media only screen and (max-width: 738px){
+    .heroContent{
+        width: 400px;
+    }
+    .heroDefinition{
+        margin-left: 350px;
+    }
+
+    .companyInfo{
+        margin-left: 30px;
+        font-size: 14px;
+    }
+
+    .contactForm{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inputField{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    .textareaField{
+        width: 300px;
+    }
+
+    .footer p{
+        width: 450px;
+        text-align: center;
+    }
+
+    .error h2{
+        font-size: 150px;
+    }
+
+    .error p{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 720px){
+    .heroContent{
+        width: 350px;
+    }
+    .heroDefinition{
+        margin-left: 330px;
+    }
+}
+@media only screen and (max-width: 662px){
+    .heroContent{
+        width: 300px;
+    }
+    .heroDefinition{
+        width: 400px;
+    }
+
+    .contentDefinition p{
+        margin-left: 100px;
+    }
+
+    .companyInfo{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .contactForm{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+
+    .inputField{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+    .textareaField{
+        width: 200px;
+    }
+
+    .submitBtn{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 564px){
+    .heroContent{
+        width: 300px;
+    }
+    .heroDefinition{
+        margin-left: 260px;
+    }
+    .aboutContent{
+        font-size: 15px;
+    }
+
+    .contentDefinition p{
+        margin-left: 70px;
+    }
+
+    .footer p{
+        width: 380px;
+        text-align: center;
+    }
+}
+
+/* ANIMACIJE */
+
+@keyframes heroLine {
+    0%{
+        width: 0px;
+        opacity: 0;
+    }
+    100%{
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes heroLogo{
+   0%{
+    opacity: 0
+}
+   100%{
+       opacity: 1;
+       visibility: visible;
+   }
+}
+
+@keyframes definition {
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes overlapTop{
+    0%{
+        height: 150px;
+    }
+    100%{
+        height: 0px;
+    }
+}
+
+@keyframes overlapBottom{
+    0%{
+        margin-top: 0;
+    }
+    100%{
+        margin-top: 75px;
+    }
+}
+
+@keyframes gridBorder{
+    0%{
+        border: .5px solid white;
+    }
+
+    100%{
+        border: 2px solid white;
+    }
+}
